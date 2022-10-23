@@ -1,0 +1,66 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 10.916 ns
+From           : SW[1]
+To             : display_vhd:module_vga|color_rom_vhd:color_rom0|B1_BAWAH[11]
+From Clock     : --
+To Clock       : CLOCK_50
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 35.653 ns
+From           : display_vhd:module_vga|color_rom_vhd:color_rom0|B_BAWAH[29]
+To             : VGA_R[4]
+From Clock     : CLOCK_50
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 14.886 ns
+From           : SW[4]
+To             : VGA_G[0]
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 1.324 ns
+From           : SW[4]
+To             : display_vhd:module_vga|color_rom_vhd:color_rom0|MENANG
+From Clock     : --
+To Clock       : CLOCK_50
+Failed Paths   : 0
+
+Type           : Clock Setup: 'CLOCK_50'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 11.53 MHz ( period = 86.696 ns )
+From           : display_vhd:module_vga|color_rom_vhd:color_rom0|KECEPATAN[0]
+To             : display_vhd:module_vga|color_rom_vhd:color_rom0|B_KANAN[24]
+From Clock     : CLOCK_50
+To Clock       : CLOCK_50
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

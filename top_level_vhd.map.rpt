@@ -1,0 +1,1091 @@
+Analysis & Synthesis report for top_level_vhd
+Tue Nov 13 12:55:50 2018
+Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Port Connectivity Checks: "display_vhd:module_vga|color_rom_vhd:color_rom0"
+ 13. Port Connectivity Checks: "display_vhd:module_vga|vga:vga_driver0"
+ 14. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++------------------------------------+-----------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Nov 13 12:55:49 2018   ;
+; Quartus II Version                 ; 9.1 Build 222 10/21/2009 SJ Web Edition ;
+; Revision Name                      ; top_level_vhd                           ;
+; Top-level Entity Name              ; top_level_vhd                           ;
+; Family                             ; Cyclone II                              ;
+; Total logic elements               ; 6,456                                   ;
+;     Total combinational functions  ; 6,435                                   ;
+;     Dedicated logic registers      ; 531                                     ;
+; Total registers                    ; 531                                     ;
+; Total pins                         ; 79                                      ;
+; Total virtual pins                 ; 0                                       ;
+; Total memory bits                  ; 0                                       ;
+; Embedded Multiplier 9-bit elements ; 0                                       ;
+; Total PLLs                         ; 0                                       ;
++------------------------------------+-----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C20F484C7       ;                    ;
+; Top-level entity name                                                      ; top_level_vhd      ; top_level_vhd      ;
+; Family name                                                                ; Cyclone II         ; Stratix II         ;
+; Use Generated Physical Constraints File                                    ; Off                ;                    ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; Off                ; Off                ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                         ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                 ;
++----------------------------------+-----------------+-----------------+---------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path    ;
++----------------------------------+-----------------+-----------------+---------------------------------+
+; CLOCKDIV.vhd                     ; yes             ; User VHDL File  ; E:/IMA LEGEND/CLOCKDIV.vhd      ;
+; color_rom_vhd.vhd                ; yes             ; User VHDL File  ; E:/IMA LEGEND/color_rom_vhd.vhd ;
+; display_vhd.vhd                  ; yes             ; User VHDL File  ; E:/IMA LEGEND/display_vhd.vhd   ;
+; top_level_vhd.vhd                ; yes             ; User VHDL File  ; E:/IMA LEGEND/top_level_vhd.vhd ;
+; vga.vhd                          ; yes             ; User VHDL File  ; E:/IMA LEGEND/vga.vhd           ;
++----------------------------------+-----------------+-----------------+---------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                          ;
++---------------------------------------------+------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                  ;
++---------------------------------------------+------------------------------------------------------------------------+
+; Estimated Total logic elements              ; 6,456                                                                  ;
+;                                             ;                                                                        ;
+; Total combinational functions               ; 6435                                                                   ;
+; Logic element usage by number of LUT inputs ;                                                                        ;
+;     -- 4 input functions                    ; 3909                                                                   ;
+;     -- 3 input functions                    ; 1273                                                                   ;
+;     -- <=2 input functions                  ; 1253                                                                   ;
+;                                             ;                                                                        ;
+; Logic elements by mode                      ;                                                                        ;
+;     -- normal mode                          ; 5588                                                                   ;
+;     -- arithmetic mode                      ; 847                                                                    ;
+;                                             ;                                                                        ;
+; Total registers                             ; 531                                                                    ;
+;     -- Dedicated logic registers            ; 531                                                                    ;
+;     -- I/O registers                        ; 0                                                                      ;
+;                                             ;                                                                        ;
+; I/O pins                                    ; 79                                                                     ;
+; Maximum fan-out node                        ; display_vhd:module_vga|color_rom_vhd:color_rom0|CLOCKDIV:tempik|DIVOUT ;
+; Maximum fan-out                             ; 455                                                                    ;
+; Total fan-out                               ; 23978                                                                  ;
+; Average fan-out                             ; 3.40                                                                   ;
++---------------------------------------------+------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                          ;
++----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node       ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                            ; Library Name ;
++----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+--------------+
+; |top_level_vhd                   ; 6435 (0)          ; 531 (0)      ; 0           ; 0            ; 0       ; 0         ; 79   ; 0            ; |top_level_vhd                                                                 ; work         ;
+;    |display_vhd:module_vga|      ; 6435 (102)        ; 531 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_vhd|display_vhd:module_vga                                          ;              ;
+;       |color_rom_vhd:color_rom0| ; 6288 (6245)       ; 487 (454)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_vhd|display_vhd:module_vga|color_rom_vhd:color_rom0                 ;              ;
+;          |CLOCKDIV:tempik|       ; 43 (43)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_vhd|display_vhd:module_vga|color_rom_vhd:color_rom0|CLOCKDIV:tempik ;              ;
+;       |vga:vga_driver0|          ; 45 (45)           ; 44 (44)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level_vhd|display_vhd:module_vga|vga:vga_driver0                          ;              ;
++----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                              ;
++---------------------------------------------------------------------+---------------------------------------------------------------------------+
+; Register name                                                       ; Reason for Removal                                                        ;
++---------------------------------------------------------------------+---------------------------------------------------------------------------+
+; display_vhd:module_vga|color_rom_vhd:color_rom0|KECEPATAN1[1,3..31] ; Stuck at GND due to stuck port data_in                                    ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|LEVEL[2..31]        ; Stuck at GND due to stuck port data_in                                    ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|KECEPATAN[1,3..31]  ; Stuck at GND due to stuck port data_in                                    ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|KECEPATAN1[2]       ; Merged with display_vhd:module_vga|color_rom_vhd:color_rom0|KECEPATAN1[0] ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|KECEPATAN[2]        ; Merged with display_vhd:module_vga|color_rom_vhd:color_rom0|KECEPATAN[0]  ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|LEVEL[0]            ; Merged with display_vhd:module_vga|color_rom_vhd:color_rom0|LEVEL[1]      ;
+; display_vhd:module_vga|vga:vga_driver0|o_pixel_row[9]               ; Stuck at GND due to stuck port data_in                                    ;
+; Total Number of Removed Registers = 94                              ;                                                                           ;
++---------------------------------------------------------------------+---------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 531   ;
+; Number of registers using Synchronous Clear  ; 42    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 452   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 469   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------+
+; Inverted Register Statistics                                           ;
++--------------------------------------------------------------+---------+
+; Inverted Register                                            ; Fan out ;
++--------------------------------------------------------------+---------+
+; display_vhd:module_vga|color_rom_vhd:color_rom0|B_BAWAH[5]   ; 18      ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|B_BAWAH[3]   ; 13      ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|B_KIRI[4]    ; 19      ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|B_KIRI[2]    ; 17      ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|B_ATAS[3]    ; 14      ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|B_ATAS[1]    ; 10      ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|B_KANAN[5]   ; 16      ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|B_KANAN[4]   ; 17      ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|B_KANAN[1]   ; 11      ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|G63_ATAS[3]  ; 2       ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|G63_ATAS[1]  ; 2       ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|B1_BAWAH[5]  ; 14      ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|B1_BAWAH[4]  ; 13      ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|B1_BAWAH[3]  ; 13      ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|B1_BAWAH[2]  ; 7       ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|B1_KIRI[3]   ; 12      ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|B1_KIRI[1]   ; 8       ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|B1_ATAS[3]   ; 10      ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|B1_ATAS[1]   ; 7       ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|B1_KANAN[5]  ; 14      ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|B1_KANAN[4]  ; 13      ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|B1_KANAN[3]  ; 9       ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|B1_KANAN[2]  ; 9       ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|G62_ATAS[3]  ; 2       ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|G62_ATAS[1]  ; 2       ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|G62B_ATAS[3] ; 3       ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|G62B_ATAS[1] ; 3       ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|G62A_ATAS[3] ; 2       ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|G62A_ATAS[1] ; 2       ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|G63B_ATAS[3] ; 3       ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|G63B_ATAS[1] ; 3       ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|G63A_ATAS[3] ; 2       ;
+; display_vhd:module_vga|color_rom_vhd:color_rom0|G63A_ATAS[1] ; 2       ;
+; Total number of inverted registers = 33                      ;         ;
++--------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
+; 9:1                ; 116 bits  ; 696 LEs       ; 464 LEs              ; 232 LEs                ; Yes        ; |top_level_vhd|display_vhd:module_vga|color_rom_vhd:color_rom0|B_BAWAH[2]   ;
+; 16:1               ; 30 bits   ; 300 LEs       ; 300 LEs              ; 0 LEs                  ; Yes        ; |top_level_vhd|display_vhd:module_vga|color_rom_vhd:color_rom0|B1_KIRI[28]  ;
+; 18:1               ; 30 bits   ; 360 LEs       ; 300 LEs              ; 60 LEs                 ; Yes        ; |top_level_vhd|display_vhd:module_vga|color_rom_vhd:color_rom0|B1_ATAS[26]  ;
+; 20:1               ; 28 bits   ; 364 LEs       ; 336 LEs              ; 28 LEs                 ; Yes        ; |top_level_vhd|display_vhd:module_vga|color_rom_vhd:color_rom0|B1_BAWAH[28] ;
+; 22:1               ; 28 bits   ; 392 LEs       ; 392 LEs              ; 0 LEs                  ; Yes        ; |top_level_vhd|display_vhd:module_vga|color_rom_vhd:color_rom0|B1_KANAN[19] ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |top_level_vhd|display_vhd:module_vga|color_rom_vhd:color_rom0|B_KIRI[2]    ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; Yes        ; |top_level_vhd|display_vhd:module_vga|color_rom_vhd:color_rom0|B1_KIRI[1]   ;
+; 18:1               ; 2 bits    ; 24 LEs        ; 22 LEs               ; 2 LEs                  ; Yes        ; |top_level_vhd|display_vhd:module_vga|color_rom_vhd:color_rom0|B1_ATAS[1]   ;
+; 20:1               ; 4 bits    ; 52 LEs        ; 48 LEs               ; 4 LEs                  ; Yes        ; |top_level_vhd|display_vhd:module_vga|color_rom_vhd:color_rom0|B1_BAWAH[2]  ;
+; 22:1               ; 4 bits    ; 56 LEs        ; 56 LEs               ; 0 LEs                  ; Yes        ; |top_level_vhd|display_vhd:module_vga|color_rom_vhd:color_rom0|B1_KANAN[4]  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top_level_vhd|display_vhd:module_vga|color_rom_vhd:color_rom0|B_KANAN      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top_level_vhd|display_vhd:module_vga|color_rom_vhd:color_rom0|B1_KANAN     ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |top_level_vhd|display_vhd:module_vga|color_rom_vhd:color_rom0|o_green      ;
+; 20:1               ; 29 bits   ; 377 LEs       ; 377 LEs              ; 0 LEs                  ; No         ; |top_level_vhd|display_vhd:module_vga|color_rom_vhd:color_rom0|B_ATAS       ;
+; 23:1               ; 3 bits    ; 45 LEs        ; 45 LEs               ; 0 LEs                  ; No         ; |top_level_vhd|display_vhd:module_vga|color_rom_vhd:color_rom0|o_red        ;
+; 23:1               ; 32 bits   ; 480 LEs       ; 480 LEs              ; 0 LEs                  ; No         ; |top_level_vhd|display_vhd:module_vga|color_rom_vhd:color_rom0|B_BAWAH      ;
+; 24:1               ; 31 bits   ; 496 LEs       ; 465 LEs              ; 31 LEs                 ; No         ; |top_level_vhd|display_vhd:module_vga|color_rom_vhd:color_rom0|B_KIRI       ;
+; 25:1               ; 32 bits   ; 512 LEs       ; 512 LEs              ; 0 LEs                  ; No         ; |top_level_vhd|display_vhd:module_vga|color_rom_vhd:color_rom0|B_KANAN      ;
+; 42:1               ; 2 bits    ; 56 LEs        ; 54 LEs               ; 2 LEs                  ; No         ; |top_level_vhd|display_vhd:module_vga|color_rom_vhd:color_rom0|o_blue       ;
+; 64:1               ; 4 bits    ; 168 LEs       ; 136 LEs              ; 32 LEs                 ; No         ; |top_level_vhd|display_vhd:module_vga|VGA_R[0]                              ;
+; 64:1               ; 2 bits    ; 84 LEs        ; 68 LEs               ; 16 LEs                 ; No         ; |top_level_vhd|display_vhd:module_vga|VGA_R[4]                              ;
+; 87:1               ; 2 bits    ; 116 LEs       ; 96 LEs               ; 20 LEs                 ; No         ; |top_level_vhd|display_vhd:module_vga|VGA_B[0]                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "display_vhd:module_vga|color_rom_vhd:color_rom0"                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; o_red[1..0]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o_green[1..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o_blue[1..0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "display_vhd:module_vga|vga:vga_driver0" ;
++---------+-------+----------+---------------------------------------+
+; Port    ; Type  ; Severity ; Details                               ;
++---------+-------+----------+---------------------------------------+
+; i_red   ; Input ; Info     ; Stuck at VCC                          ;
+; i_green ; Input ; Info     ; Stuck at VCC                          ;
+; i_blue  ; Input ; Info     ; Stuck at VCC                          ;
++---------+-------+----------+---------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
+    Info: Processing started: Tue Nov 13 12:52:26 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top_level_vhd -c top_level_vhd
+Info: Found 2 design units, including 1 entities, in source file clockdiv.vhd
+    Info: Found design unit 1: CLOCKDIV-behavioural
+    Info: Found entity 1: CLOCKDIV
+Info: Found 2 design units, including 1 entities, in source file color_rom_vhd.vhd
+    Info: Found design unit 1: color_rom_vhd-behavioral
+    Info: Found entity 1: color_rom_vhd
+Info: Found 2 design units, including 1 entities, in source file display_vhd.vhd
+    Info: Found design unit 1: display_vhd-behavioral
+    Info: Found entity 1: display_vhd
+Info: Found 2 design units, including 1 entities, in source file pll_vhd.vhd
+    Info: Found design unit 1: pll_vhd-SYN
+    Info: Found entity 1: pll_vhd
+Info: Found 2 design units, including 1 entities, in source file top_level_vhd.vhd
+    Info: Found design unit 1: top_level_vhd-behavioral
+    Info: Found entity 1: top_level_vhd
+Info: Found 2 design units, including 1 entities, in source file vga.vhd
+    Info: Found design unit 1: vga-behavioral
+    Info: Found entity 1: vga
+Info: Elaborating entity "top_level_vhd" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at top_level_vhd.vhd(17): used implicit default value for signal "GPIO_0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at top_level_vhd.vhd(18): used implicit default value for signal "LEDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Info: Elaborating entity "display_vhd" for hierarchy "display_vhd:module_vga"
+Warning (10541): VHDL Signal Declaration warning at display_vhd.vhd(20): used implicit default value for signal "VGA_CLK" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at display_vhd.vhd(21): used implicit default value for signal "VGA_BLANK" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Info: Elaborating entity "vga" for hierarchy "display_vhd:module_vga|vga:vga_driver0"
+Info: Elaborating entity "color_rom_vhd" for hierarchy "display_vhd:module_vga|color_rom_vhd:color_rom0"
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(40): used initial value expression for variable "S_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(41): used initial value expression for variable "S_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(42): used initial value expression for variable "S_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(43): used initial value expression for variable "S_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(45): used initial value expression for variable "GR1_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(46): used initial value expression for variable "GR1_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(47): used initial value expression for variable "GR1_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(48): used initial value expression for variable "GR1_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(50): used initial value expression for variable "GR2_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(51): used initial value expression for variable "GR2_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(52): used initial value expression for variable "GR2_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(53): used initial value expression for variable "GR2_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(55): used initial value expression for variable "GR3_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(56): used initial value expression for variable "GR3_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(57): used initial value expression for variable "GR3_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(58): used initial value expression for variable "GR3_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(60): used initial value expression for variable "GR4_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(61): used initial value expression for variable "GR4_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(62): used initial value expression for variable "GR4_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(63): used initial value expression for variable "GR4_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(65): used initial value expression for variable "GR5_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(66): used initial value expression for variable "GR5_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(67): used initial value expression for variable "GR5_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(68): used initial value expression for variable "GR5_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(70): used initial value expression for variable "GR6_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(71): used initial value expression for variable "GR6_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(72): used initial value expression for variable "GR6_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(73): used initial value expression for variable "GR6_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(75): used initial value expression for variable "GR8_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(76): used initial value expression for variable "GR8_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(77): used initial value expression for variable "GR8_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(78): used initial value expression for variable "GR8_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(80): used initial value expression for variable "GR9_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(81): used initial value expression for variable "GR9_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(82): used initial value expression for variable "GR9_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(83): used initial value expression for variable "GR9_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(85): used initial value expression for variable "GR10_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(86): used initial value expression for variable "GR10_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(87): used initial value expression for variable "GR10_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(88): used initial value expression for variable "GR10_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(90): used initial value expression for variable "GR11_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(91): used initial value expression for variable "GR11_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(92): used initial value expression for variable "GR11_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(93): used initial value expression for variable "GR11_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(95): used initial value expression for variable "GR12_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(96): used initial value expression for variable "GR12_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(97): used initial value expression for variable "GR12_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(98): used initial value expression for variable "GR12_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(100): used initial value expression for variable "GR13_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(101): used initial value expression for variable "GR13_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(102): used initial value expression for variable "GR13_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(103): used initial value expression for variable "GR13_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(105): used initial value expression for variable "GR14_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(106): used initial value expression for variable "GR14_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(107): used initial value expression for variable "GR14_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(108): used initial value expression for variable "GR14_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(110): used initial value expression for variable "GC1_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(111): used initial value expression for variable "GC1_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(112): used initial value expression for variable "GC1_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(113): used initial value expression for variable "GC1_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(115): used initial value expression for variable "GC2_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(116): used initial value expression for variable "GC2_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(117): used initial value expression for variable "GC2_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(118): used initial value expression for variable "GC2_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(120): used initial value expression for variable "GC3_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(121): used initial value expression for variable "GC3_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(122): used initial value expression for variable "GC3_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(123): used initial value expression for variable "GC3_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(125): used initial value expression for variable "GC4_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(126): used initial value expression for variable "GC4_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(127): used initial value expression for variable "GC4_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(128): used initial value expression for variable "GC4_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(130): used initial value expression for variable "GC5_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(131): used initial value expression for variable "GC5_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(132): used initial value expression for variable "GC5_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(133): used initial value expression for variable "GC5_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(135): used initial value expression for variable "GC7_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(136): used initial value expression for variable "GC7_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(137): used initial value expression for variable "GC7_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(138): used initial value expression for variable "GC7_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(140): used initial value expression for variable "GC8_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(141): used initial value expression for variable "GC8_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(142): used initial value expression for variable "GC8_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(143): used initial value expression for variable "GC8_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(145): used initial value expression for variable "F_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(146): used initial value expression for variable "F_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(147): used initial value expression for variable "F_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(148): used initial value expression for variable "F_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(158): used initial value expression for variable "P_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(159): used initial value expression for variable "P_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(160): used initial value expression for variable "P_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(161): used initial value expression for variable "P_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(164): used initial value expression for variable "G1_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(165): used initial value expression for variable "G1_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(166): used initial value expression for variable "G1_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(167): used initial value expression for variable "G1_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(170): used initial value expression for variable "G2_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(171): used initial value expression for variable "G2_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(172): used initial value expression for variable "G2_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(173): used initial value expression for variable "G2_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(176): used initial value expression for variable "G3_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(177): used initial value expression for variable "G3_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(178): used initial value expression for variable "G3_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(179): used initial value expression for variable "G3_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(182): used initial value expression for variable "G4_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(183): used initial value expression for variable "G4_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(184): used initial value expression for variable "G4_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(185): used initial value expression for variable "G4_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(188): used initial value expression for variable "G5_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(189): used initial value expression for variable "G5_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(190): used initial value expression for variable "G5_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(191): used initial value expression for variable "G5_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(194): used initial value expression for variable "G6_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(195): used initial value expression for variable "G6_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(196): used initial value expression for variable "G6_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(197): used initial value expression for variable "G6_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(200): used initial value expression for variable "G7_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(201): used initial value expression for variable "G7_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(202): used initial value expression for variable "G7_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(203): used initial value expression for variable "G7_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(206): used initial value expression for variable "G8_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(207): used initial value expression for variable "G8_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(208): used initial value expression for variable "G8_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(209): used initial value expression for variable "G8_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(212): used initial value expression for variable "G9_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(213): used initial value expression for variable "G9_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(214): used initial value expression for variable "G9_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(215): used initial value expression for variable "G9_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(218): used initial value expression for variable "G10_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(219): used initial value expression for variable "G10_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(220): used initial value expression for variable "G10_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(221): used initial value expression for variable "G10_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(224): used initial value expression for variable "G11_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(225): used initial value expression for variable "G11_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(226): used initial value expression for variable "G11_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(227): used initial value expression for variable "G11_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(230): used initial value expression for variable "G12_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(231): used initial value expression for variable "G12_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(232): used initial value expression for variable "G12_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(233): used initial value expression for variable "G12_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(236): used initial value expression for variable "G13_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(237): used initial value expression for variable "G13_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(238): used initial value expression for variable "G13_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(239): used initial value expression for variable "G13_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(242): used initial value expression for variable "G14_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(243): used initial value expression for variable "G14_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(244): used initial value expression for variable "G14_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(245): used initial value expression for variable "G14_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(248): used initial value expression for variable "G15_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(249): used initial value expression for variable "G15_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(250): used initial value expression for variable "G15_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(251): used initial value expression for variable "G15_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(254): used initial value expression for variable "G16_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(255): used initial value expression for variable "G16_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(256): used initial value expression for variable "G16_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(257): used initial value expression for variable "G16_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(260): used initial value expression for variable "G17_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(261): used initial value expression for variable "G17_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(262): used initial value expression for variable "G17_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(263): used initial value expression for variable "G17_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(266): used initial value expression for variable "G18_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(267): used initial value expression for variable "G18_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(268): used initial value expression for variable "G18_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(269): used initial value expression for variable "G18_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(272): used initial value expression for variable "G19_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(273): used initial value expression for variable "G19_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(274): used initial value expression for variable "G19_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(275): used initial value expression for variable "G19_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(278): used initial value expression for variable "G20_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(279): used initial value expression for variable "G20_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(280): used initial value expression for variable "G20_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(281): used initial value expression for variable "G20_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(284): used initial value expression for variable "G21_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(285): used initial value expression for variable "G21_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(286): used initial value expression for variable "G21_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(287): used initial value expression for variable "G21_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(290): used initial value expression for variable "G22_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(291): used initial value expression for variable "G22_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(292): used initial value expression for variable "G22_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(293): used initial value expression for variable "G22_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(296): used initial value expression for variable "G23_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(297): used initial value expression for variable "G23_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(298): used initial value expression for variable "G23_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(299): used initial value expression for variable "G23_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(302): used initial value expression for variable "G24_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(303): used initial value expression for variable "G24_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(304): used initial value expression for variable "G24_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(305): used initial value expression for variable "G24_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(308): used initial value expression for variable "G25_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(309): used initial value expression for variable "G25_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(310): used initial value expression for variable "G25_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(311): used initial value expression for variable "G25_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(314): used initial value expression for variable "G26_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(315): used initial value expression for variable "G26_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(316): used initial value expression for variable "G26_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(317): used initial value expression for variable "G26_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(320): used initial value expression for variable "G27_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(321): used initial value expression for variable "G27_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(322): used initial value expression for variable "G27_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(323): used initial value expression for variable "G27_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(326): used initial value expression for variable "G28_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(327): used initial value expression for variable "G28_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(328): used initial value expression for variable "G28_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(329): used initial value expression for variable "G28_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(332): used initial value expression for variable "G29_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(333): used initial value expression for variable "G29_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(334): used initial value expression for variable "G29_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(335): used initial value expression for variable "G29_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(338): used initial value expression for variable "G30_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(339): used initial value expression for variable "G30_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(340): used initial value expression for variable "G30_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(341): used initial value expression for variable "G30_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(344): used initial value expression for variable "G31_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(345): used initial value expression for variable "G31_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(346): used initial value expression for variable "G31_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(347): used initial value expression for variable "G31_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(350): used initial value expression for variable "G32_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(351): used initial value expression for variable "G32_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(352): used initial value expression for variable "G32_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(353): used initial value expression for variable "G32_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(356): used initial value expression for variable "G33_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(357): used initial value expression for variable "G33_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(358): used initial value expression for variable "G33_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(359): used initial value expression for variable "G33_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(362): used initial value expression for variable "G34_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(363): used initial value expression for variable "G34_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(364): used initial value expression for variable "G34_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(365): used initial value expression for variable "G34_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(368): used initial value expression for variable "G35_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(369): used initial value expression for variable "G35_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(370): used initial value expression for variable "G35_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(371): used initial value expression for variable "G35_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(374): used initial value expression for variable "G36_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(375): used initial value expression for variable "G36_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(376): used initial value expression for variable "G36_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(377): used initial value expression for variable "G36_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(380): used initial value expression for variable "G37_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(381): used initial value expression for variable "G37_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(382): used initial value expression for variable "G37_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(383): used initial value expression for variable "G37_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(386): used initial value expression for variable "G40_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(387): used initial value expression for variable "G40_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(388): used initial value expression for variable "G40_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(389): used initial value expression for variable "G40_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(392): used initial value expression for variable "G41_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(393): used initial value expression for variable "G41_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(394): used initial value expression for variable "G41_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(395): used initial value expression for variable "G41_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(398): used initial value expression for variable "G42_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(399): used initial value expression for variable "G42_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(400): used initial value expression for variable "G42_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(401): used initial value expression for variable "G42_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(404): used initial value expression for variable "G44_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(405): used initial value expression for variable "G44_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(406): used initial value expression for variable "G44_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(407): used initial value expression for variable "G44_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(410): used initial value expression for variable "G45_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(411): used initial value expression for variable "G45_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(412): used initial value expression for variable "G45_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(413): used initial value expression for variable "G45_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(416): used initial value expression for variable "G46_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(417): used initial value expression for variable "G46_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(418): used initial value expression for variable "G46_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(419): used initial value expression for variable "G46_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(422): used initial value expression for variable "G47_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(423): used initial value expression for variable "G47_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(424): used initial value expression for variable "G47_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(425): used initial value expression for variable "G47_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(428): used initial value expression for variable "G48_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(429): used initial value expression for variable "G48_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(430): used initial value expression for variable "G48_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(431): used initial value expression for variable "G48_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(434): used initial value expression for variable "G49_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(435): used initial value expression for variable "G49_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(436): used initial value expression for variable "G49_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(437): used initial value expression for variable "G49_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(440): used initial value expression for variable "G50_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(441): used initial value expression for variable "G50_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(442): used initial value expression for variable "G50_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(443): used initial value expression for variable "G50_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(446): used initial value expression for variable "G51_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(447): used initial value expression for variable "G51_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(448): used initial value expression for variable "G51_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(449): used initial value expression for variable "G51_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(452): used initial value expression for variable "G52_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(453): used initial value expression for variable "G52_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(454): used initial value expression for variable "G52_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(455): used initial value expression for variable "G52_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(458): used initial value expression for variable "G53_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(459): used initial value expression for variable "G53_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(460): used initial value expression for variable "G53_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(461): used initial value expression for variable "G53_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(464): used initial value expression for variable "G54_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(465): used initial value expression for variable "G54_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(466): used initial value expression for variable "G54_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(467): used initial value expression for variable "G54_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(470): used initial value expression for variable "G55_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(471): used initial value expression for variable "G55_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(472): used initial value expression for variable "G55_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(473): used initial value expression for variable "G55_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(476): used initial value expression for variable "G56_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(477): used initial value expression for variable "G56_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(478): used initial value expression for variable "G56_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(479): used initial value expression for variable "G56_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(482): used initial value expression for variable "G57_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(483): used initial value expression for variable "G57_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(484): used initial value expression for variable "G57_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(485): used initial value expression for variable "G57_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(488): used initial value expression for variable "G58_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(489): used initial value expression for variable "G58_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(490): used initial value expression for variable "G58_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(491): used initial value expression for variable "G58_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(494): used initial value expression for variable "G59_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(495): used initial value expression for variable "G59_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(496): used initial value expression for variable "G59_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(497): used initial value expression for variable "G59_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(500): used initial value expression for variable "G60_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(501): used initial value expression for variable "G60_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(502): used initial value expression for variable "G60_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(503): used initial value expression for variable "G60_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(506): used initial value expression for variable "G61_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(507): used initial value expression for variable "G61_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(508): used initial value expression for variable "G61_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(509): used initial value expression for variable "G61_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(513): used initial value expression for variable "G62_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(514): used initial value expression for variable "G62_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(515): used initial value expression for variable "G62_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(518): used initial value expression for variable "G62A_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(519): used initial value expression for variable "G62A_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(520): used initial value expression for variable "G62A_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(523): used initial value expression for variable "G62B_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(524): used initial value expression for variable "G62B_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(525): used initial value expression for variable "G62B_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(529): used initial value expression for variable "G63_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(530): used initial value expression for variable "G63_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(531): used initial value expression for variable "G63_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(534): used initial value expression for variable "G63A_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(535): used initial value expression for variable "G63A_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(536): used initial value expression for variable "G63A_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(539): used initial value expression for variable "G63B_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(540): used initial value expression for variable "G63B_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(541): used initial value expression for variable "G63B_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(547): used initial value expression for variable "G64_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(548): used initial value expression for variable "G64_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(549): used initial value expression for variable "G64_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(550): used initial value expression for variable "G64_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(553): used initial value expression for variable "G65_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(554): used initial value expression for variable "G65_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(555): used initial value expression for variable "G65_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(556): used initial value expression for variable "G65_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(559): used initial value expression for variable "G66_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(560): used initial value expression for variable "G66_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(561): used initial value expression for variable "G66_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(562): used initial value expression for variable "G66_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(565): used initial value expression for variable "G67_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(566): used initial value expression for variable "G67_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(567): used initial value expression for variable "G67_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(568): used initial value expression for variable "G67_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(571): used initial value expression for variable "G68_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(572): used initial value expression for variable "G68_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(573): used initial value expression for variable "G68_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(574): used initial value expression for variable "G68_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(577): used initial value expression for variable "G69_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(578): used initial value expression for variable "G69_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(579): used initial value expression for variable "G69_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(580): used initial value expression for variable "G69_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(583): used initial value expression for variable "G70_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(584): used initial value expression for variable "G70_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(585): used initial value expression for variable "G70_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(586): used initial value expression for variable "G70_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(589): used initial value expression for variable "G71_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(590): used initial value expression for variable "G71_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(591): used initial value expression for variable "G71_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(592): used initial value expression for variable "G71_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(595): used initial value expression for variable "G72_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(596): used initial value expression for variable "G72_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(597): used initial value expression for variable "G72_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(598): used initial value expression for variable "G72_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(601): used initial value expression for variable "G73_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(602): used initial value expression for variable "G73_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(603): used initial value expression for variable "G73_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(604): used initial value expression for variable "G73_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(607): used initial value expression for variable "G74_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(608): used initial value expression for variable "G74_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(609): used initial value expression for variable "G74_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(610): used initial value expression for variable "G74_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(613): used initial value expression for variable "G75_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(614): used initial value expression for variable "G75_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(615): used initial value expression for variable "G75_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(616): used initial value expression for variable "G75_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(619): used initial value expression for variable "G76_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(620): used initial value expression for variable "G76_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(621): used initial value expression for variable "G76_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(622): used initial value expression for variable "G76_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(625): used initial value expression for variable "G77_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(626): used initial value expression for variable "G77_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(627): used initial value expression for variable "G77_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(628): used initial value expression for variable "G77_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(631): used initial value expression for variable "G78_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(632): used initial value expression for variable "G78_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(633): used initial value expression for variable "G78_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(634): used initial value expression for variable "G78_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(637): used initial value expression for variable "G79_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(638): used initial value expression for variable "G79_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(639): used initial value expression for variable "G79_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(640): used initial value expression for variable "G79_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(643): used initial value expression for variable "G80_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(644): used initial value expression for variable "G80_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(645): used initial value expression for variable "G80_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(646): used initial value expression for variable "G80_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(649): used initial value expression for variable "G81_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(650): used initial value expression for variable "G81_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(651): used initial value expression for variable "G81_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(652): used initial value expression for variable "G81_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(655): used initial value expression for variable "G82_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(656): used initial value expression for variable "G82_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(657): used initial value expression for variable "G82_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(658): used initial value expression for variable "G82_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(661): used initial value expression for variable "G83_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(662): used initial value expression for variable "G83_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(663): used initial value expression for variable "G83_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(664): used initial value expression for variable "G83_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(667): used initial value expression for variable "G84_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(668): used initial value expression for variable "G84_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(669): used initial value expression for variable "G84_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(670): used initial value expression for variable "G84_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(673): used initial value expression for variable "G85_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(674): used initial value expression for variable "G85_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(675): used initial value expression for variable "G85_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(676): used initial value expression for variable "G85_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(679): used initial value expression for variable "G86_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(680): used initial value expression for variable "G86_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(681): used initial value expression for variable "G86_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(682): used initial value expression for variable "G86_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(685): used initial value expression for variable "G87_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(686): used initial value expression for variable "G87_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(687): used initial value expression for variable "G87_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(688): used initial value expression for variable "G87_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(691): used initial value expression for variable "G88_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(692): used initial value expression for variable "G88_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(693): used initial value expression for variable "G88_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(694): used initial value expression for variable "G88_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(697): used initial value expression for variable "G89_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(698): used initial value expression for variable "G89_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(699): used initial value expression for variable "G89_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(700): used initial value expression for variable "G89_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(703): used initial value expression for variable "G90_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(704): used initial value expression for variable "G90_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(705): used initial value expression for variable "G90_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(706): used initial value expression for variable "G90_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(709): used initial value expression for variable "G91_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(710): used initial value expression for variable "G91_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(711): used initial value expression for variable "G91_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(712): used initial value expression for variable "G91_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(715): used initial value expression for variable "G92_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(716): used initial value expression for variable "G92_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(717): used initial value expression for variable "G92_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(718): used initial value expression for variable "G92_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(721): used initial value expression for variable "G93_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(722): used initial value expression for variable "G93_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(723): used initial value expression for variable "G93_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(724): used initial value expression for variable "G93_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(727): used initial value expression for variable "G94_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(728): used initial value expression for variable "G94_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(729): used initial value expression for variable "G94_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(730): used initial value expression for variable "G94_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(733): used initial value expression for variable "G95_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(734): used initial value expression for variable "G95_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(735): used initial value expression for variable "G95_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(736): used initial value expression for variable "G95_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(739): used initial value expression for variable "G96_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(740): used initial value expression for variable "G96_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(741): used initial value expression for variable "G96_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(742): used initial value expression for variable "G96_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(745): used initial value expression for variable "G97_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(746): used initial value expression for variable "G97_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(747): used initial value expression for variable "G97_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(748): used initial value expression for variable "G97_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(751): used initial value expression for variable "G98_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(752): used initial value expression for variable "G98_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(753): used initial value expression for variable "G98_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(754): used initial value expression for variable "G98_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(757): used initial value expression for variable "G99_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(758): used initial value expression for variable "G99_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(759): used initial value expression for variable "G99_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(760): used initial value expression for variable "G99_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(763): used initial value expression for variable "G100_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(764): used initial value expression for variable "G100_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(765): used initial value expression for variable "G100_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(766): used initial value expression for variable "G100_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(769): used initial value expression for variable "G101_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(770): used initial value expression for variable "G101_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(771): used initial value expression for variable "G101_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(772): used initial value expression for variable "G101_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(775): used initial value expression for variable "G102_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(776): used initial value expression for variable "G102_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(777): used initial value expression for variable "G102_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(778): used initial value expression for variable "G102_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(781): used initial value expression for variable "G103_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(782): used initial value expression for variable "G103_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(783): used initial value expression for variable "G103_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(784): used initial value expression for variable "G103_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(787): used initial value expression for variable "G104_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(788): used initial value expression for variable "G104_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(789): used initial value expression for variable "G104_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(790): used initial value expression for variable "G104_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(796): used initial value expression for variable "G105_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(797): used initial value expression for variable "G105_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(798): used initial value expression for variable "G105_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(799): used initial value expression for variable "G105_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(802): used initial value expression for variable "G106_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(803): used initial value expression for variable "G106_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(804): used initial value expression for variable "G106_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(805): used initial value expression for variable "G106_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(808): used initial value expression for variable "G107_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(809): used initial value expression for variable "G107_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(810): used initial value expression for variable "G107_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(811): used initial value expression for variable "G107_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(814): used initial value expression for variable "G108_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(815): used initial value expression for variable "G108_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(816): used initial value expression for variable "G108_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(817): used initial value expression for variable "G108_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(820): used initial value expression for variable "G109_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(821): used initial value expression for variable "G109_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(822): used initial value expression for variable "G109_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(823): used initial value expression for variable "G109_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(826): used initial value expression for variable "G110_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(827): used initial value expression for variable "G110_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(828): used initial value expression for variable "G110_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(829): used initial value expression for variable "G110_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(832): used initial value expression for variable "G111_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(833): used initial value expression for variable "G111_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(834): used initial value expression for variable "G111_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(835): used initial value expression for variable "G111_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(838): used initial value expression for variable "G112_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(839): used initial value expression for variable "G112_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(840): used initial value expression for variable "G112_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(841): used initial value expression for variable "G112_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(844): used initial value expression for variable "G113_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(845): used initial value expression for variable "G113_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(846): used initial value expression for variable "G113_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(847): used initial value expression for variable "G113_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(850): used initial value expression for variable "G114_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(851): used initial value expression for variable "G114_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(852): used initial value expression for variable "G114_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(853): used initial value expression for variable "G114_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(856): used initial value expression for variable "G115_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(857): used initial value expression for variable "G115_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(858): used initial value expression for variable "G115_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(859): used initial value expression for variable "G115_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(862): used initial value expression for variable "G116_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(863): used initial value expression for variable "G116_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(864): used initial value expression for variable "G116_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(865): used initial value expression for variable "G116_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(868): used initial value expression for variable "G117_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(869): used initial value expression for variable "G117_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(870): used initial value expression for variable "G117_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(871): used initial value expression for variable "G117_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(874): used initial value expression for variable "G118_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(875): used initial value expression for variable "G118_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(876): used initial value expression for variable "G118_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(877): used initial value expression for variable "G118_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(880): used initial value expression for variable "G119_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(881): used initial value expression for variable "G119_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(882): used initial value expression for variable "G119_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(883): used initial value expression for variable "G119_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(889): used initial value expression for variable "G120_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(890): used initial value expression for variable "G120_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(891): used initial value expression for variable "G120_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(892): used initial value expression for variable "G120_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(895): used initial value expression for variable "G121_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(896): used initial value expression for variable "G121_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(897): used initial value expression for variable "G121_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(898): used initial value expression for variable "G121_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(901): used initial value expression for variable "G122_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(902): used initial value expression for variable "G122_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(903): used initial value expression for variable "G122_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(904): used initial value expression for variable "G122_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(907): used initial value expression for variable "G123_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(908): used initial value expression for variable "G123_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(909): used initial value expression for variable "G123_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(910): used initial value expression for variable "G123_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(913): used initial value expression for variable "G124_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(914): used initial value expression for variable "G124_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(915): used initial value expression for variable "G124_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(916): used initial value expression for variable "G124_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(919): used initial value expression for variable "G125_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(920): used initial value expression for variable "G125_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(921): used initial value expression for variable "G125_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(922): used initial value expression for variable "G125_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(925): used initial value expression for variable "G126_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(926): used initial value expression for variable "G126_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(927): used initial value expression for variable "G126_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(928): used initial value expression for variable "G126_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(931): used initial value expression for variable "G127_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(932): used initial value expression for variable "G127_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(933): used initial value expression for variable "G127_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(934): used initial value expression for variable "G127_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(937): used initial value expression for variable "G128_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(938): used initial value expression for variable "G128_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(939): used initial value expression for variable "G128_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(940): used initial value expression for variable "G128_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(943): used initial value expression for variable "G129_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(944): used initial value expression for variable "G129_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(945): used initial value expression for variable "G129_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(946): used initial value expression for variable "G129_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(949): used initial value expression for variable "G130_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(950): used initial value expression for variable "G130_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(951): used initial value expression for variable "G130_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(952): used initial value expression for variable "G130_BAWAH" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(955): used initial value expression for variable "G131_ATAS" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(956): used initial value expression for variable "G131_KIRI" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(957): used initial value expression for variable "G131_KANAN" because variable was never assigned a value
+Warning (10542): VHDL Variable Declaration warning at color_rom_vhd.vhd(958): used initial value expression for variable "G131_BAWAH" because variable was never assigned a value
+Warning (10492): VHDL Process Statement warning at color_rom_vhd.vhd(1079): signal "clock40hz" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at color_rom_vhd.vhd(1119): signal "clock40hz" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at color_rom_vhd.vhd(1220): signal "clock40hz" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at color_rom_vhd.vhd(1309): signal "clock40hz" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at color_rom_vhd.vhd(1384): signal "clock40hz" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at color_rom_vhd.vhd(1598): signal "clock40hz" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at color_rom_vhd.vhd(1638): signal "clock40hz" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at color_rom_vhd.vhd(1774): signal "clock40hz" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at color_rom_vhd.vhd(1909): signal "clock40hz" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at color_rom_vhd.vhd(2043): signal "clock40hz" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at color_rom_vhd.vhd(975): inferring latch(es) for signal or variable "o_red", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at color_rom_vhd.vhd(975): inferring latch(es) for signal or variable "o_green", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at color_rom_vhd.vhd(975): inferring latch(es) for signal or variable "o_blue", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at color_rom_vhd.vhd(975): inferring latch(es) for signal or variable "UTAMA", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "o_blue[0]" at color_rom_vhd.vhd(975)
+Info (10041): Inferred latch for "o_blue[1]" at color_rom_vhd.vhd(975)
+Info (10041): Inferred latch for "o_blue[2]" at color_rom_vhd.vhd(975)
+Info (10041): Inferred latch for "o_blue[3]" at color_rom_vhd.vhd(975)
+Info (10041): Inferred latch for "o_blue[4]" at color_rom_vhd.vhd(975)
+Info (10041): Inferred latch for "o_blue[5]" at color_rom_vhd.vhd(975)
+Info (10041): Inferred latch for "o_blue[6]" at color_rom_vhd.vhd(975)
+Info (10041): Inferred latch for "o_blue[7]" at color_rom_vhd.vhd(975)
+Info (10041): Inferred latch for "o_green[0]" at color_rom_vhd.vhd(975)
+Info (10041): Inferred latch for "o_green[1]" at color_rom_vhd.vhd(975)
+Info (10041): Inferred latch for "o_green[2]" at color_rom_vhd.vhd(975)
+Info (10041): Inferred latch for "o_green[3]" at color_rom_vhd.vhd(975)
+Info (10041): Inferred latch for "o_green[4]" at color_rom_vhd.vhd(975)
+Info (10041): Inferred latch for "o_green[5]" at color_rom_vhd.vhd(975)
+Info (10041): Inferred latch for "o_green[6]" at color_rom_vhd.vhd(975)
+Info (10041): Inferred latch for "o_green[7]" at color_rom_vhd.vhd(975)
+Info (10041): Inferred latch for "o_red[0]" at color_rom_vhd.vhd(975)
+Info (10041): Inferred latch for "o_red[1]" at color_rom_vhd.vhd(975)
+Info (10041): Inferred latch for "o_red[2]" at color_rom_vhd.vhd(975)
+Info (10041): Inferred latch for "o_red[3]" at color_rom_vhd.vhd(975)
+Info (10041): Inferred latch for "o_red[4]" at color_rom_vhd.vhd(975)
+Info (10041): Inferred latch for "o_red[5]" at color_rom_vhd.vhd(975)
+Info (10041): Inferred latch for "o_red[6]" at color_rom_vhd.vhd(975)
+Info (10041): Inferred latch for "o_red[7]" at color_rom_vhd.vhd(975)
+Info (10041): Inferred latch for "UTAMA" at color_rom_vhd.vhd(1072)
+Info: Elaborating entity "CLOCKDIV" for hierarchy "display_vhd:module_vga|color_rom_vhd:color_rom0|CLOCKDIV:tempik"
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "VGA_CLK" is stuck at GND
+    Warning (13410): Pin "VGA_BLANK" is stuck at GND
+    Warning (13410): Pin "GPIO_0[0]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[1]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[2]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[3]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[4]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[5]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[6]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[7]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[8]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[9]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[10]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[11]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[12]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[13]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[14]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[15]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[16]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[17]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[18]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[19]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[20]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[21]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[22]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[23]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[24]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[25]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[26]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[27]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[28]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[29]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[30]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[31]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[32]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[33]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[34]" is stuck at GND
+    Warning (13410): Pin "GPIO_0[35]" is stuck at GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND
+    Warning (13410): Pin "LEDR[1]" is stuck at GND
+    Warning (13410): Pin "LEDR[2]" is stuck at GND
+    Warning (13410): Pin "LEDR[3]" is stuck at GND
+    Warning (13410): Pin "LEDR[4]" is stuck at GND
+    Warning (13410): Pin "LEDR[5]" is stuck at GND
+    Warning (13410): Pin "LEDR[6]" is stuck at GND
+    Warning (13410): Pin "LEDR[7]" is stuck at GND
+    Warning (13410): Pin "LEDR[8]" is stuck at GND
+    Warning (13410): Pin "LEDR[9]" is stuck at GND
+Warning: Design contains 5 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[5]"
+    Warning (15610): No output dependent on input pin "SW[6]"
+    Warning (15610): No output dependent on input pin "SW[7]"
+    Warning (15610): No output dependent on input pin "SW[8]"
+    Warning (15610): No output dependent on input pin "SW[9]"
+Info: Implemented 6603 device resources after synthesis - the final resource count might be different
+    Info: Implemented 11 input pins
+    Info: Implemented 68 output pins
+    Info: Implemented 6524 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 687 warnings
+    Info: Peak virtual memory: 282 megabytes
+    Info: Processing ended: Tue Nov 13 12:55:50 2018
+    Info: Elapsed time: 00:03:24
+    Info: Total CPU time (on all processors): 00:02:57
+
+

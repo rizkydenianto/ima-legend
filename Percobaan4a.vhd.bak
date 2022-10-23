@@ -1,0 +1,122 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+ENTITY Percobaan4a is
+ 	port (  DAYNIGHT   : IN STD_LOGIC;     
+   		 ISDARURAT : IN STD_LOGIC; --Jika darurat   
+	CLOCKIN : IN STD_LOGIC;
+  	LED : OUT STD_LOGIC_VECTOR (5 downto 0));
+END Percobaan4a; 
+ARCHITECTURE TRAFFICLIGHT OF Percobaan4a IS 
+
+component CLOCKDIV is 
+  port(CLK: IN STD_LOGIC;        
+  	DIVOUT: buffer STD_LOGIC);
+end component; 
+
+
+TYPE KONDISILAMPU IS (S1, S2, S3, S4, S5, S6); 
+SIGNAL CURRENTKONDISI: KONDISILAMPU;
+SIGNAL CLOCKASLI : STD_LOGIC; 
+SHARED VARIABLE HITUNG : integer := 0; 
+SHARED VARIABLE DARURATMODE : integer := 0; 
+
+BEGIN 
+  TEMP: CLOCKDIV PORT MAP (CLK => CLOCKIN, DIVOUT => CLOCKASLI); --Menggabungkan Clockdiv  
+  
+PROCESS (CLOCKASLI,ISDARURAT,DAYNIGHT)
+BEGIN --REPARASI KODE ISDARURAT     
+ IF (CLOCKASLI'EVENT) AND (CLOCKASLI = '1') AND (ISDARURAT = '1') THEN    
+ IF DARURATMODE = 0 THEN   
+    DARURATMODE := 1;   
+    HITUNG := 0;    
+ END IF;    
+ IF (HITUNG < 2) AND (NOT (CURRENTKONDISI = S6)) THEN      
+	 CURRENTKONDISI <= S5;     
+	 HITUNG := HITUNG + 1;   
+	ELSE       
+	 CURRENTKONDISI <= S6;      
+	 HITUNG := 0;     
+	 END IF;    
+	 
+ IF (HITUNG < 2) AND (CURRENTKONDISI = S6) THEN     
+ 	 CURRENTKONDISI <= S6;     
+	 HITUNG := HITUNG + 1;    
+ ELSE      
+	 CURRENTKONDISI <= S5;   
+	 HITUNG := 0;   
+ END IF;     
+ 	   ELSIF (CLOCKASLI'EVENT) AND (CLOCKASLI = '1') AND (ISDARURAT = '0') THEN
+     IF DARURATMODE = 1 THEN     
+	DARURATMODE := 0;      
+	CURRENTKONDISI <= S5;     
+  END IF; 
+  CASE CURRENTKONDISI IS  
+  WHEN S1 =>  
+   IF ((HITUNG < 8) AND (DAYNIGHT = '1')) OR  ((HITUNG < 4) AND (DAYNIGHT = '0')) THEN 
+   HITUNG :=  HITUNG + 1; 
+
+   CURRENTKONDISI <= S1;
+       ELSE        
+
+  CURRENTKONDISI <= S2; 
+  HITUNG :=  0;
+  END IF;
+  LED <= NOT "001100"; --H_US dan M_BT
+
+    WHEN S2 =>
+     IF ((HITUNG < 2) AND (DAYNIGHT = '1')) OR ((HITUNG < 2) AND (DAYNIGHT = '0')) THEN 
+  HITUNG :=  HITUNG + 1;
+
+    CURRENTKONDISI <= S2;
+       ELSE 
+
+CURRENTKONDISI <= S3;
+  HITUNG :=  0;
+  END IF; 
+  LED <= NOT "010100"; --K_US dan M_BT
+          
+  WHEN S3 => 
+  IF ((HITUNG < 8) AND (DAYNIGHT = '1')) OR  ((HITUNG < 4) AND (DAYNIGHT = '0')) THEN   
+  HITUNG :=  HITUNG + 1;
+          CURRENTKONDISI <= S3; 
+             ELSE      
+		CURRENTKONDISI <= S4;
+	  HITUNG :=  0;
+  END IF;
+	LED <= NOT "100001"; --M_US dan H_BT      
+
+	WHEN S4 => 
+ 	   IF ((HITUNG < 2) AND (DAYNIGHT = '1')) OR ((HITUNG < 2) AND (DAYNIGHT = '0')) THEN
+   HITUNG :=  HITUNG + 1;
+         CURRENTKONDISI <= S4;
+   ELSE       
+   CURRENTKONDISI <= S1;  
+   HITUNG :=  0; 
+   END IF;   
+   LED <= NOT "100010"; --M_US dan K_BT    
+
+	  WHEN S5 =>   
+  IF (HITUNG < 2) THEN 
+  HITUNG :=  HITUNG + 1;   
+	 CURRENTKONDISI <= S5;
+	 ELSE
+         CURRENTKONDISI <= S6;
+       HITUNG :=  0;
+  END IF;   
+  LED <= NOT "010010"; --Kuning menyala   
+
+         WHEN S6 =>     IF (HITUNG < 2) THEN
+   HITUNG :=  HITUNG + 1;
+	CURRENTKONDISI <= S6;
+   ELSE  
+        CURRENTKONDISI <= S1;
+   HITUNG :=  0; 
+  END IF;
+	LED <= NOT "000000"; --Semua lampu mati  
+  END CASE;
+  END IF;     
+        END PROCESS;
+ END TRAFFICLIGHT;
